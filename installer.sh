@@ -2,13 +2,15 @@
 
 ##setup command=wget https://raw.githubusercontent.com/emil237/ncam/main/installer.sh -O - | /bin/sh
 #
+##########################################
 echo " download and install emu ncam "
 
-version=12.8
+version=12.9
+######################################
 OPKGINSTALL=opkg install --force-overwrite
 MY_URL="https://raw.githubusercontent.com/emil237/ncam/main"
-MY_IPK="enigma2-plugin-softcams-ncam_V12.8-r0_all.ipk"
-MY_DEB="enigma2-plugin-softcams-ncam_V12.8-r0_all.deb"
+MY_IPK="enigma2-plugin-softcams-ncam_V12.9-r0_all.ipk"
+MY_DEB="enigma2-plugin-softcams-ncam-osdreambox_V12.9-r0.deb"
 ##############################################################################
 # remove old emu #
 opkg remove enigma2-plugin-softcams-ncam
@@ -25,13 +27,14 @@ rm -rf * > /dev/null 2>&1
 # Download and install plugin #
 
 set -e
-     wget "$MY_URL/$MY_IPK"
-  wait
-     wget "$MY_URL/$MY_DEB"
-
+     
  if which dpkg > /dev/null 2>&1; then
+      wget "$MY_URL/$MY_DEB"
+ wait
 		dpkg -i --force-overwrite $MY_DEB; apt-get install -f -y
 	else
+      wget "$MY_URL/$MY_IPK"
+ wait
 		opkg install --force-reinstall $MY_IPK
 	fi
 echo "================================="
@@ -54,6 +57,9 @@ echo "**************************************************************************
 wait
 killall -9 enigma2
 exit 0
+
+
+
 
 
 
