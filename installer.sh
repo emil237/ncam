@@ -5,12 +5,12 @@
 ##########################################
 echo " download and install emu ncam "
 
-version=12.9
+version=13.0
 ######################################
 OPKGINSTALL=opkg install --force-overwrite
 MY_URL="https://raw.githubusercontent.com/emil237/ncam/main"
-MY_IPK="enigma2-plugin-softcams-ncam_V12.9-r0_all.ipk"
-MY_DEB="enigma2-plugin-softcams-ncam-osdreambox_V12.9-r0.deb"
+MY_IPK="enigma2-plugin-softcams-ncam_V13.0-r0_all.ipk"
+MY_DEB="enigma2-plugin-softcams-ncam-osdreambox_V13.0-r0.deb"
 ##############################################################################
 # remove old emu #
 opkg remove enigma2-plugin-softcams-ncam
@@ -57,6 +57,8 @@ echo "**************************************************************************
 wait
 killall -9 enigma2
 exit 0
+
+
 
 
 
